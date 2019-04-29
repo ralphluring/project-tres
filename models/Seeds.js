@@ -1,31 +1,59 @@
 db.places.insertMany(
+    [
    {
-        "place_name": "California Surf Museum",
-        "place_img": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/CA_Surf_Museum.jpg/250px-CA_Surf_Museum.jpg",
+        "place_name": "Coast Highway",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1605&width=300&height=250&autoplay=yes",
         "place_location": [33.196500, -117.380300],
-        "place_visited" : false
+        "place_visited" : false,
+        "series:": "Road Trip with Huell Howser",
+        "episode" : 106, 
     },
     {
-        "place_name": "Hut & Hangers",
-        "place_img": "http://blogs.chapman.edu/huell-howser-archives/1995/12/10/hut-hangers-californias-gold-602/",
+        "place_name": "Huts & Hangers",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1201&width=300&height=250&autoplay=yes",
         "place_location": [33.383728, -117.374731],
-        "place_visited" : false
+        "place_visited" : false,
+        "series": "California's Gold",
+        "episode" : 602,
     },
     {
         "place_name": "San Onofre Beach",
-        "place_img": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.californiabeaches.com%2Fwp-content%2Fuploads%2F2014%2F09%2FSan-Onofre-Bluffs-Nude-Beach-Bryce-Apr16-6-1000x657.jpg&imgrefurl=https%3A%2F%2Fwww.californiabeaches.com%2Fbeach%2Fsan-onofre-state-beach-nude-area%2F&docid=NauO1URMmn1kTM&tbnid=7owUtB3k_NoaBM%3A&vet=10ahUKEwjQlP3jnvbhAhXNJTQIHSI0B8AQMwhYKAAwAA..i&w=1000&h=657&safe=off&bih=700&biw=714&q=san%20onofre%20beach&ved=0ahUKEwjQlP3jnvbhAhXNJTQIHSI0B8AQMwhYKAAwAA&iact=mrc&uact=8",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1250&width=300&height=250&autoplay=yes",
         "place_location": [33.384217, -117.583599],
-        "place_visited" : false
+        "place_visited" : false,
+        "series": "California's Gold",
+        "episode" : 1004,
     },
     {
         "place_name": "See's Candy",
-        "place_img": "http://upload.wikimedia.org/wikipedia/en/a/a8/See%27s_Candies_logo.png",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1050&width=300&height=250&autoplay=yes",
         "place_location": [37.790129, -122.401208],
-        "place_visited" : false
+        "place_visited" : false,
+        "series": "California's Gold",
+        "episode" : 908,
     },
     {
-        "place_name": "Muybridge",
-        "place_img": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Stanford_University_seal_2003.svg/220px-Stanford_University_seal_2003.svg.png",
+        "place_name": "Las Vegas",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1108&width=300&height=250&autoplay=yes",
         "place_location": [37.427461, -122.169708],
-        "place_visited" : false
-    })
+        "place_visited" : false,
+        "series": "Road Trip with Huell Howser",
+        "episode" : 156,
+    },
+])
+
+
+//Coast Highway Embed
+//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1605&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
+
+//Hut's and Hangar's embed
+//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1201&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
+
+//San Onofre Beach embed
+//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1250&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
+
+//See's Candy embed
+//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1050&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
+
+//Las Vegas embed
+//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1108&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
