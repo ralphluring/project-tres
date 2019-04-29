@@ -14,7 +14,13 @@ let Place = new Schema({
     },
     place_visited: {
         type: Boolean
-    }
+    },
+    series: {
+        type: String
+    },
+    episode: {
+        type: Number
+    },
 });
 
 // creates the place object and exports it

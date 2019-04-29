@@ -5,9 +5,13 @@ import axios from 'axios';
 const Place = props => (
     <tr>
         <td>{props.place.place_name}</td>
-        <td>{props.place.place_img}</td>
-        <td>{props.place.place_location}</td>
-        <td>{props.place.place_visited}</td>
+        <td>
+        <iframe  src={props.place.place_img} frameborder="0" allowfullscreen></iframe>
+        </td>
+        <td>{props.place.series}</td>    
+        <td>{props.place.episode}</td>  
+        <td>{props.place.place_location}</td>  
+        <td>{props.place.place_visited}</td>    
     </tr>
 )
 
@@ -43,8 +47,10 @@ export default class PlaceList extends Component {
                     <thead>
                         <tr>
                             <th>Name </th>
-                            <th>Image</th>
-                            <th>Location</th>
+                            <th>Video</th>
+                            <th>Series</th>
+                            <th>Episode</th>
+                            <th>Location(lat,long)</th>
                             <th>Visited</th>
                         </tr>
                     </thead>

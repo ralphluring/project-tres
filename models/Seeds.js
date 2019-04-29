@@ -1,4 +1,5 @@
 db.places.insertMany(
+    [
    {
         "place_name": "California Surf Museum",
         "place_img": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/CA_Surf_Museum.jpg/250px-CA_Surf_Museum.jpg",
@@ -28,4 +29,22 @@ db.places.insertMany(
         "place_img": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Stanford_University_seal_2003.svg/220px-Stanford_University_seal_2003.svg.png",
         "place_location": [37.427461, -122.169708],
         "place_visited" : false
-    })
+    }]
+    )
+
+    db.places.insertMany([
+        {
+        "place_name": "Huts and Hangers",
+        "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1201&width=300&height=250&autoplay=yes",
+        "place_location": [37.427461, -122.169708],
+        "place_visited" : false
+        },
+        {
+        "place_name": "California Surf Museum",
+        "place_img": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/CA_Surf_Museum.jpg/250px-CA_Surf_Museum.jpg",
+        "place_location": [33.196500, -117.380300],
+        "place_visited" : false
+        },
+])
+
+    
