@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreateTodo from "./components/CreateTodo";
 import EditTodo from "./components/EditTodo";
-import TodosList from "./components/TodoList";
+import PlaceList from "./components/PlaceList";
 
 import logo from "./logo.png";
 
@@ -19,16 +19,16 @@ class App extends Component {
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">All Todos</Link>
+                  <Link to="/" className="nav-link">All Places</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">Create Todo</Link>
+                  <Link to="/create" className="nav-link">Create New Place</Link>
                 </li>
               </ul>
             </div>
           </nav>
           <br/>
-          <Route path="/" exact component={TodosList} />
+          <Route path="/" exact component={PlaceList} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
         </div>
