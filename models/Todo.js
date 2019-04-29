@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // creates a constructor that is a template for the data in a todo
 let Todo = new Schema({
-    todo_description: {
+    place_name: {
         type: String
     },
-    todo_responsible: {
+    place_img: {
         type: String
     },
-    todo_priority: {
-        type: String
+    place_location: {
+        type: [Number]
     },
-    todo_completed: {
+    place_visited: {
         type: Boolean
     }
 });
