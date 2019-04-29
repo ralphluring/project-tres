@@ -57,3 +57,7 @@ db.places.insertMany(
 
 //Las Vegas embed
 //<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1108&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
+
+
+
+  
