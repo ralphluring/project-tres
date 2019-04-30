@@ -4,6 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CreateTodo from "./components/CreateTodo";
 import PlaceList from "./components/PlaceList";
 import logo from "./huell-logo.jpg";
+import HuellMap from "./components/HuellMap";
+
+
 
 class App extends Component {
   render() {
@@ -20,15 +23,16 @@ class App extends Component {
                   <Link to="/" className="nav-link">All Places</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">Create New Place</Link>
+                  <Link to="/map" className="nav-link">See Map</Link>
                 </li>
               </ul>
             </div>
           </nav>
           
           <Route path="/" exact component={PlaceList} />
-          {/* <Route path="/place/:id" component={Place} /> */}
-          <Route path="/create" component={CreateTodo} />
+
+          <Route path="/map" component={HuellMap} />
+
         </div>
       </Router>
     );
