@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreateTodo from "./components/CreateTodo";
-
 import PlaceList from "./components/PlaceList";
+import logo from "./huell-logo.jpg";
 import HuellMap from "./components/HuellMap";
 
-import logo from "./logo.png";
+
 
 class App extends Component {
   render() {
@@ -28,10 +28,11 @@ class App extends Component {
               </ul>
             </div>
           </nav>
-          <br/>
+          
           <Route path="/" exact component={PlaceList} />
-          {/* <Route path="/edit/:id" component={} /> */}
+
           <Route path="/map" component={HuellMap} />
+
         </div>
       </Router>
     );

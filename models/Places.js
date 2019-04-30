@@ -10,7 +10,7 @@ let Place = new Schema({
         type: String
     },
     place_location: {
-        type: [Number]
+        type: {}
     },
     place_visited: {
         type: Boolean
@@ -21,6 +21,9 @@ let Place = new Schema({
     episode: {
         type: Number
     },
+    summary:{
+        type:String
+    }
 });
 
 // creates the place object and exports it

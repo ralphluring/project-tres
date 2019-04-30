@@ -5,3 +5,59 @@
 .container{
     background-color:grey;
 }
+
+.places{
+    display:grid;
+    grid-gap:20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.place-video{
+    display: flex;
+    justify-content: center;
+}
+
+.place-info h1{
+    text-align: center;
+}
+
+.place-detail{
+    display: flex;
+    justify-content: space-around;
+}
+
+.place-summary p{
+    padding: 20px;
+}
+
+.place-container{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    border:1px solid yellow;
+}
+
+.visited{
+    
+    display:flex;
+    justify-content: center;
+}
+
+.place-more-info{
+    display:flex;
+    justify-content: space-around;
+}
+
+.visited-false{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+   align-items: center; 
+   background-color: red;
+
+}
+
+.visited-false p {
+    color:white;
+    padding: 15px;
+}
