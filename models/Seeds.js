@@ -1,4 +1,4 @@
-db.places.insertMany(
+db.huell.insertMany(
     [
    {
         "place_name": "Coast Highway",
