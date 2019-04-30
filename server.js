@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const routes = require("./routes/api/places");
+const Places = require("./models/Places");
 
 let Place = require('./models/Places');
 app.use(cors());
@@ -9,26 +11,25 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/places",{ useNewUrlParser: true });
-const connection = mongoose.connection;
+// DB Config
+const db = require('./config/keys').mongoURI;
+console.log(db)
+// Connect to MongoDB
+mongoose
+  .connect(db,{ useNewUrlParser: true })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
-connection.once('open', function() {
-    console.log("MongoDB database connection established successfully");
-});
 
-const placeRoutes = express.Router();
-app.use('/places', placeRoutes);
+// // Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/places",{ useNewUrlParser: true });
+// const connection = mongoose.connection;
 
-placeRoutes.route('/').get(function(req, res) {
-    Place.find(function(err, places) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(places);
-        }
-    });
-});
+// connection.once('open', function() {
+//     console.log("MongoDB database connection established successfully");
+// });
+
+app.use(routes);
 
 
 

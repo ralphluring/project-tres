@@ -1,11 +1,10 @@
-db.places.insertMany(
-    [
+[
    {
         "place_name": "Coast Highway",
         "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1605",
         "place_location": {
-           lat: 33.196500,
-           lng: -117.380300
+           "lat": 33.196500,
+           "lng": -117.380300
         },
         "place_visited" : false,
         "series:": "Road Trip with Huell Howser",
@@ -16,8 +15,8 @@ db.places.insertMany(
         "place_name": "Huts & Hangers",
         "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1201",
         "place_location": {
-            lat:33.383728,
-            lng:-117.374731
+            "lat":33.383728,
+            "lng":-117.374731
         },
         "place_visited" : false,
         "series": "California's Gold",
@@ -28,8 +27,8 @@ db.places.insertMany(
         "place_name": "San Onofre Beach",
         "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1250",
         "place_location": {
-            lat:33.384217,
-            lng: -117.583599
+            "lat":33.384217,
+            "lng": -117.583599
         },
         "place_visited" : false,
         "series": "California's Gold",
@@ -40,8 +39,8 @@ db.places.insertMany(
         "place_name": "See's Candy",
         "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1050",
         "place_location": {
-            lat:37.790129,
-            lng: -122.401208
+            "lat":37.790129,
+            "lng": -122.401208
         },
         "place_visited" : false,
         "series": "California's Gold",
@@ -52,32 +51,15 @@ db.places.insertMany(
         "place_name": "Las Vegas",
         "place_img": "https://vhost1.chapman.edu/player/embed_player.php?vid=1108",
         "place_location": {
-            lat:37.427461,
-            lng: -122.169708
+            "lat":37.427461,
+            "lng": -122.169708
         },
         "place_visited" : false,
         "series": "Road Trip with Huell Howser",
         "episode" : 156,
         "summary":"Huell heads for the hustle and bustle of Las Vegas to find some of the “hidden” gold in this historic town. From the Old Las Vegas Mormon Fort State Historic Park to the Atomic Testing Museum, there’s a lot to see and do."
-    },
-])
+    }
+]
 
+// mongoimport --host huell-shard-00-00-ewhka.mongodb.net:27017 --db huell --type json --file ~/Downloads/placesImport.json  --jsonArray --authenticationDatabase admin --ssl --username ralphluring --password ralphluring 
 
-//Coast Highway Embed
-//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1605&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
-
-//Hut's and Hangar's embed
-//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1201&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
-
-//San Onofre Beach embed
-//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1250&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
-
-//See's Candy embed
-//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1050&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
-
-//Las Vegas embed
-//<iframe width="300" height="250" src="https://vhost1.chapman.edu/player/embed_player.php?vid=1108&width=300&height=250&autoplay=yes" frameborder="0" allowfullscreen></iframe>
-
-
-
-  

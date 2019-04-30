@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreateTodo from "./components/CreateTodo";
-import EditTodo from "./components/EditTodo";
 import PlaceList from "./components/PlaceList";
-
-import logo from "./logo.png";
+import logo from "./huell-logo.jpg";
 
 class App extends Component {
   render() {
@@ -27,9 +25,9 @@ class App extends Component {
               </ul>
             </div>
           </nav>
-          <br/>
+          
           <Route path="/" exact component={PlaceList} />
-          <Route path="/edit/:id" component={EditTodo} />
+          {/* <Route path="/place/:id" component={Place} /> */}
           <Route path="/create" component={CreateTodo} />
         </div>
       </Router>
