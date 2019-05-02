@@ -9,8 +9,8 @@ class HuellMap extends Component {
         const pos = {lat,lng};
 
         const style = {
-            width:'350px',
-            height:'300px'
+            // width:'350px',
+            // height:'300px'
         }
         return (
             <div className="mapContainer">

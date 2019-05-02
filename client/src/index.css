@@ -4,20 +4,40 @@
 
 .container{
     background-color:grey;
+    width: 100%;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .places{
-    display:grid;
-    grid-gap:20px;
-    grid-template-columns: 1fr 1fr;
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.title-container{
+    display: flex;
+    justify-content: center;
 }
 
 .place-video{
     display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 .place-info h1{
+    margin:0px;
     text-align: center;
 }
 
@@ -26,31 +46,34 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.place-detail p{
+    text-align: center;
+}
+
 .place-summary p{
-    padding: 20px;
+    padding: 0px 20px;
 }
 
-.place-container{
-    display: flex;
-    border:1px solid yellow;
-    
-}
+/* .place-container *{
+    border:1px solid black; 
+} */
 
-.mapContainer{
-    background-color: red;
-    position: relative;
+.place-container {
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
     width: 100%;
+    background-color: yellow;
+    
 }
 
 .mapContainer:first-child{
-    position:relative;
-    width: 100%;
-   
+    position: absolute;
+    width: 45%;
+    height: 60%;
+    margin: 20px;
+
 }
 
-.place-map{
-    
-}
 
 .visited{
     
@@ -68,7 +91,7 @@
     flex-direction: column;
     align-content: center;
    align-items: center; 
-   background-color: red;
+    border:1px solid black;
 
 }
 

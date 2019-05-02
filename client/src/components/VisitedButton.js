@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 
-function VisitedButton (props) {
-        return (
-            <div className="visited-button">
-                <button>I Been there!</button>
-                <p>{props.props._id}</p>
-            </div>
-        )
-    }
+const VisitedButton = (props) => {
+    
+  const handleClick = (e) => {
+    props.clickHandler(e, props.place_id);
+  };
 
+  return (
+    <div className="visited-button">
+      <button onClick={handleClick}>{props.children}</button>
+    </div>
+  );
+}
 
 export default VisitedButton;

@@ -8,6 +8,11 @@ router.post("/add/place",function(req,res){
     })
 })
 
+// router.put("/data",function(req,res){
+//     Places
+//     .findOneAndUpdate({req.body})
+// })
+
 // returns all places
 router.get("/data",function(req,res){
     Places

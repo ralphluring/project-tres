@@ -18,7 +18,7 @@
             "lat":33.383728,
             "lng":-117.374731
         },
-        "place_visited" : false,
+        "place_visited" : ["visited"],
         "series": "California's Gold",
         "episode" : 602,
         "summary":"Huell gets a tour of the largest wooden buildings in the world, the vast blimp hangars at the U.S. Marine Air station at Tustin. He then travels to the Seabee Naval Museum at Port Hueneme and the Marine Base at Camp Pendelton, to get a firsthand look at the history of an honest-to-goodness military institution-the quonset hut."
