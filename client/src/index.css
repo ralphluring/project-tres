@@ -22,8 +22,8 @@
 }
 
 .place-detail{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .place-summary p{
@@ -32,9 +32,24 @@
 
 .place-container{
     display: flex;
-    flex-direction: column;
-    justify-self: center;
     border:1px solid yellow;
+    
+}
+
+.mapContainer{
+    background-color: red;
+    position: relative;
+    width: 100%;
+}
+
+.mapContainer:first-child{
+    position:relative;
+    width: 100%;
+   
+}
+
+.place-map{
+    
 }
 
 .visited{

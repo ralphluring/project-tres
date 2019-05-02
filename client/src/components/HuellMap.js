@@ -3,22 +3,28 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 class HuellMap extends Component {
     render() {
-        const pos = {lat: 33.383728, lng: -117.374731}
-        const pos2= {lat: 33.196500, lng: -117.380300}
+        console.log();
+        let lat = this.props.location.lat;
+        let lng = this.props.location.lng;
+        const pos = {lat,lng};
+
+        const style = {
+            width:'350px',
+            height:'300px'
+        }
         return (
-            <div className="App">
-                <header className="App-header">
-                    <h1 className="Huell">Huell Howser stuff</h1>
-                </header>
-
-
-                <Map google={this.props.google} zoom={14}>
-
-                <Marker position = {pos} />
-                <Marker position = {pos2} />
-
-                    <InfoWindow onClose={this.onInfoWindowClose}>
-                    </InfoWindow>
+            <div className="mapContainer">
+                <Map 
+                google={this.props.google} 
+                zoom={15} 
+                style={style} 
+                initialCenter={{
+                    lat:lat,
+                    lng:lng
+                }} 
+                >
+                    <Marker position = {pos} />
+                    <InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
                 </Map>
             </div>
         )
