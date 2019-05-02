@@ -8,10 +8,14 @@ router.post("/add/place",function(req,res){
     })
 })
 
-// router.put("/data",function(req,res){
-//     Places
-//     .findOneAndUpdate({req.body})
-// })
+router.put('/data/:id', async function (req, res) {
+    console.log(req.body);
+    console.log(req.params);
+    
+    const r = await Places.findOneAndUpdate({_id:req.params.id},{$set:{place_visited: req.body.place_visited}},{new: true})
+
+    res.json({result: r})
+  })
 
 // returns all places
 router.get("/data",function(req,res){
