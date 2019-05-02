@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Places = require("../../models/Places");
 // Route for adding places
+
 router.post("/add/place",function(req,res){
     Places.create(req.body).then(function(data){
         res.send(data);
