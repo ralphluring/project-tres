@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import axios from "axios";
 import "../huell.css";
+import visited from "../../visited.png";
+import notVisited from "../../not-visited.png";
+
 
 class FullMap extends Component {
   state = {
@@ -48,16 +51,24 @@ class FullMap extends Component {
   }
 
   markers = () => {
+    console.log(this.state.places)
     return this.state.places.map((currentPlace, i) => {
-       
+        let icon = '';
+        if(currentPlace.place_visited){
+             icon = visited;
+        }else{
+            icon = notVisited;
+        }
         let lat = currentPlace.place_location.lat;
         let lng = currentPlace.place_location.lng;
         const pos = { lat, lng };
 
         return (
-            <Marker position={pos} id={currentPlace._id} onClick={this.onMarkerClick}/>
+            
+            <Marker  icon={{url:icon,scaledSize:new this.props.google.maps.Size(25,25)}} className="marker"position={pos} id={currentPlace._id} onClick={this.onMarkerClick}/>
+            
         );
-      
+        
     });
   };
 
@@ -80,6 +91,7 @@ class FullMap extends Component {
             lat: 36.033852,
             lng: -120.038702
           }}
+         
         >
           {this.markers()}
           <InfoWindow
@@ -90,7 +102,7 @@ class FullMap extends Component {
               <p>{this.state.windowData.summary}</p>
               <p>{this.state.windowData.series}</p>
               <p>{this.state.windowData.episode}</p>
-             <p> {this.state.windowData.place_visited ? "you been here": "you have not been here"}</p>
+           {this.state.windowData.place_visited ? <img src={visited} alt="visited"/>:<img src={notVisited} alt="not-visited"/>}
             </InfoWindow>
         
 
