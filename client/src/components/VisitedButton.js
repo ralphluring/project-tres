@@ -7,9 +7,9 @@ const VisitedButton = (props) => {
   };
 
   return (
-    <div className="visited-button">
-      <button onClick={handleClick}>{props.children}</button>
-    </div>
+    
+      <button className="visited-button" onClick={handleClick}>{props.children}</button>
+  
   );
 }
 

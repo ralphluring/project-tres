@@ -7,13 +7,15 @@ router.post("/add/place",function(req,res){
         res.send(data);
     })
 })
-
+// route for updating if a person has been to the location
 router.put('/data/:id', async function (req, res) {
     console.log(req.body);
     console.log(req.params);
-    
-    const r = await Places.findOneAndUpdate({_id:req.params.id},{$set:{place_visited: req.body.place_visited}},{new: true})
-
+    const r = await Places.findOneAndUpdate(
+        {_id:req.params.id},
+        {$set:{place_visited: req.body.place_visited}},
+        {new: true}
+        )
     res.json({result: r})
   })
 

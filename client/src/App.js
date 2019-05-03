@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Home from "./components/pages/Home";
 import AllPlaces from "./components/pages/AllPlaces";
 import HuellMap from "./components/pages/FullMap";
-import logo from "./huell-logo.jpg";
+import logo from "./huell-logo.png";
 
 class App extends Component {
   render() {

@@ -1,15 +1,16 @@
-#root{
-    background-color: red;
+body{
+    margin: 0;
 }
 
 .container{
-    background-color:grey;
+    background-color:#fff;
     width: 100%;
 }
 
 .navbar a{
+    padding: 20px 0px;
     text-decoration: none;
-    color:white;
+    color:#000;
     font-size: 1.3rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -22,7 +23,6 @@
 .places{
   width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 .title-container{
@@ -61,9 +61,7 @@
 .place-container {
     display:grid; 
     grid-template-columns: 1fr 1fr;
-    width: 100%;
-    background-color: yellow;
-    
+    width: 100%;    
 }
 
 .mapContainer:first-child{
@@ -74,9 +72,7 @@
 
 }
 
-
-.visited{
-    
+.visited{ 
     display:flex;
     justify-content: center;
 }
@@ -90,12 +86,32 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-   align-items: center; 
-    border:1px solid black;
-
+    align-items: center; 
+}
+.visited-button{
+    background: none;
+    border:none;
+    font-size: 1.2rem;
 }
 
-.visited-false p {
-    color:white;
-    padding: 15px;
+.visited-button:hover{
+   color:green;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+    .place-container {
+        display:grid; 
+        grid-template-columns: 1fr ;
+        width: 100%;        
+    }
+
+    .place-video iframe{
+        height: 150px;
+    }
+
+    .mapContainer:first-child{
+        display:none;
+    }
+  }

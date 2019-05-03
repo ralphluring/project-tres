@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
+
 class HuellMap extends Component {
     render() {
         console.log();
@@ -9,7 +10,7 @@ class HuellMap extends Component {
         const pos = {lat,lng};
 
         const style = {
-            // width:'350px',
+            // width:,
             // height:'300px'
         }
         return (
