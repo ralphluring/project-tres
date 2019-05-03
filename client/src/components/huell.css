@@ -1,0 +1,8 @@
+
+.mapContainer:first-child{
+    position: absolute;
+    width: 45%;
+    height: 60%;
+    margin: 20px;
+
+}

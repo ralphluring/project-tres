@@ -4,7 +4,7 @@ import VisitedButton from "./VisitedButton";
 import HuellMap from './HuellMap';
 
 function Place (props) {
-    console.log(props)
+    console.log(props.place.place_visited);
     return (
     <div className="place-container">
         <div className="place-info-container">
@@ -15,7 +15,7 @@ function Place (props) {
                 </div>
                 <div className="place-detail">
                         <p>Series: {props.place.series ? props.place.series :"California's Gold"}</p>
-                        <p>Episode # : {props.place.episode}</p>
+                        <p>Episode # {props.place.episode}</p>
                 </div>
                 <div className="place-video">
                     <iframe title="video" src={props.place.place_img} frameBorder="0" allowFullScreen width="70%" height="280px"></iframe>
@@ -26,7 +26,8 @@ function Place (props) {
             </div>
         
             <div className="visited">
-                <VisitedButton props={props.place} place_id={props.place._id} clickHandler={props.clickHandler}>asdfasdfsdaf</VisitedButton>
+              
+               <VisitedButton props={props.place} place_id={props.place._id} clickHandler={props.clickHandler}>{props.place.place_visited ? "" : "Mark Visited"}</VisitedButton>
             </div>
 
 

@@ -3,12 +3,6 @@ import axios from 'axios';
 import Place from "../Place";
 
 export default class PlaceList extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {places: []};
-    // }
-
     state = { places: [] }
 
     handleVisited = async(e, id) => {
