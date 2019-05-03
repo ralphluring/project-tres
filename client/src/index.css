@@ -98,6 +98,11 @@ body{
    color:green;
 }
 
+.marker{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Checkmark_green.svg/1180px-Checkmark_green.svg.png");
+    border:1px solid red;
+}
+
 
 @media only screen and (max-width: 600px) {
 
