@@ -1,5 +1,12 @@
+require('dotenv').config()
 const express = require('express');
+const passport = require("passport");
+const session = require("express-session");
 const app = express();
+app.use(session({
+  secret:"huell cat",
+  cookie:{}
+}))
 const cors = require('cors');
 const mongoose = require('mongoose');
 const routes = require("./routes/api/places");
@@ -10,6 +17,10 @@ app.use(cors());
 // middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(passport.initialize());
+app.use(passport.session());
+require("./services/passport");
 
 // DB Config
 const db = require('./config/keys').mongoURI;

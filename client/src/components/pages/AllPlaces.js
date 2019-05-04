@@ -35,6 +35,14 @@ export default class PlaceList extends Component {
             .catch(function (error){
                 console.log(error);
             })
+
+        axios.get('http://localhost:5000/whoAmI')
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(function(error){
+            console.log(error)
+        })
     }
     
 
