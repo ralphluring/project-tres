@@ -4,7 +4,7 @@ import VisitedButton from "./VisitedButton";
 import HuellMap from './HuellMap';
 
 function Place (props) {
-    console.log(props.place.place_visited);
+    console.log("Place component: isVisited: ", props.isVisited);
     return (
     <div className="place-container">
         <div className="place-info-container">
@@ -27,7 +27,7 @@ function Place (props) {
         
             <div className="visited">
               
-               <VisitedButton props={props.place} place_id={props.place._id} clickHandler={props.clickHandler}>{props.place.place_visited ? "" : "Mark Visited"}</VisitedButton>
+               <VisitedButton props={props.place} place_id={props.place._id} clickHandler={props.clickHandler}>{"Mark Visited"}</VisitedButton>
             </div>
 
 

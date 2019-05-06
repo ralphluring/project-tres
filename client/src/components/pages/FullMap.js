@@ -50,13 +50,23 @@ class FullMap extends Component {
         console.log(error);
       });
 
+      // axios
+      // .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
+      // .then(response => {
+      //     this.setState({placesVisited:response.data.placesvisited})
+      //     console.log(response.data.placesvisited);
+      // })
+      // .catch(function(error){
+      //   console.log(error);
+      // })
+
       axios
       .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
       .then(response => {
-          this.setState({placesVisited:response.data.placesvisited})
-          console.log(response.data.placesvisited);
+        this.setState({ placesVisited: response.data.placesvisited.map( place => place.place ) })
+        console.log("AllPlaces - componentdidmount", response.data.placesvisited);
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
       })
   }

@@ -1,35 +1,55 @@
 const router = require("express").Router();
 const passport = require("passport");
 const Places = require("../../models/Places");
+const User = require("../../models/User");
 
 // Route for adding places
-router.post("/add/place", function(req, res) {
-  Places.create(req.body).then(function(data) {
+router.post("/add/place", function (req, res) {
+  Places.create(req.body).then(function (data) {
     res.send(data);
   });
 });
 // route for updating if a person has been to the location
-router.put("/data/:id", async function(req, res) {
+router.put("/data/:id", async function (req, res) {
   console.log(req.body);
   console.log(req.params);
-  const r = await Places.findOneAndUpdate(
-    { _id: req.params.id },
-    { $set: { place_visited: req.body.place_visited } },
+
+  const r = await User.findOneAndUpdate(
+    { googleId: req.user.googleId },
+    {
+      $push:
+      {
+        placesVisited: {
+          place: req.params.id
+        }
+      }
+    },
     { new: true }
   );
   res.json({ result: r });
+  // res.json({ message: 'ok' })
 });
 
 // returns all places
-router.get("/data", function(req, res) {
+router.get("/data", function (req, res) {
   Places.find()
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
 
-router.get("/user/placesvisited/:googleid", function(req, res) {
-  User.findOne({googleId:req.params.googleid})
-    .then(result => res.json({placesvisited:result.placesVisited}))
+// router.get("/user/placesvisited", function (req, res) {
+//   User.findOne({ googleId: req.user.googleid })
+//     .then(result => res.json({ placesvisited: result.placesVisited }))
+//     .catch(err => res.status(422).json(err));
+// });
+
+router.get("/user/placesvisited/:googleid", function (req, res) {
+  console.log("get /user/placesvisited/:googleid")
+  User.findOne({ googleId: req.params.googleid })
+    .then(result => {
+      console.log(result)
+      res.json({ placesvisited: result.placesVisited })
+    })
     .catch(err => res.status(422).json(err));
 });
 
@@ -51,10 +71,10 @@ router.get(
   }
 );
 
-router.get("/whoami", async function(req, res) {
-  console.log( "Inside api/places whoami", req.user )
-  console.log( "Inside api/places whoami", req.session )
-  res.json({googleId:req.user.googleId,displayName:req.user.displayName});
+router.get("/whoami", async function (req, res) {
+  console.log("Inside api/places whoami", req.user)
+  // console.log("Inside api/places whoami", req.session)
+  res.json({ googleId: req.user.googleId, displayName: req.user.displayName });
 });
 
 module.exports = router;

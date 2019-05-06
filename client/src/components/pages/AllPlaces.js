@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Place from "../Place";
 
+
 export default class PlaceList extends Component {
   state = {
     places: [],
@@ -10,28 +11,39 @@ export default class PlaceList extends Component {
 
   handleVisited = async (e, id) => {
     console.log(id);
-    let value;
-    this.setState({
-      places: this.state.places.map(place => {
-        if (place._id !== id) {
-          return place;
-        }
-        value = !place.place_visited;
-        return {
-          ...place,
-          place_visited: !place.place_visited
-        };
+    // console.log(this.props.googleId)
+    // let value;
+    // this.setState({
+    //   places: this.state.places.map(place => {
+    //     if (place._id !== id) {
+    //       return place;
+    //     }
+    //     value = !place.place_visited;
+    //     return {
+    //       ...place,
+    //       place_visited: !place.place_visited
+    //     };
+    //   })
+    // });
+    await axios.put(`http://localhost:5000/data/${id}`,
+      { place_visited: id },
+      { withCredentials: true }
+    )
+      .then(results => {
+        console.log(results.data)
+        this.setState({
+          placesVisited: results.data.result.placesVisited.map( place => place.place )
+        })
       })
-    });
-    await axios.put(`http://localhost:5000/data/${id}`, {
-      place_visited: value
-    });
+      .catch(e => {
+        console.log(e)
+      })
   };
 
   componentDidMount() {
     // gets the data at the route /data which returns
     // all the places from the database
-
+    console.log("componentDidMount ", this.state )
     axios
       .get("http://localhost:5000/data/")
       .then(response => {
@@ -39,17 +51,17 @@ export default class PlaceList extends Component {
         this.setState({ places: response.data });
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
 
-      axios
+    axios
       .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
       .then(response => {
-          this.setState({placesVisited:response.data.placesvisited})
-          console.log(response.data.placesvisited);
+        this.setState({ placesVisited: response.data.placesvisited.map( place => place.place ) })
+        console.log("AllPlaces - componentdidmount", response.data.placesvisited);
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
       })
   }
@@ -60,7 +72,7 @@ export default class PlaceList extends Component {
         <Place
           place={currentPlace}
           key={currentPlace._id}
-          isVisited = {this.state.placesVisited.indexOf(currentPlace._id)!==-1}
+          isVisited={this.state.placesVisited.indexOf(currentPlace._id) !== -1}
           clickHandler={this.handleVisited}
         />
       );
