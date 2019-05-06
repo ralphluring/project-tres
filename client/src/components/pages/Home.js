@@ -1,12 +1,24 @@
-import React from 'react';
+import React,{Component} from 'react';
+import axios from 'axios';
 
-function Home (props) {
-    return (
-    <div className="home-container">
+class Home extends Component {
+    state = {user:{}}   
+    componentDidMount() {
+    
+        axios.get('http://localhost:5000/whoami')
+        .then(response => {
+            console.log(response);
+            this.setState({user:response.data})
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    }
 
 
-    </div>
-    )
+    render(){
+        return <div><a href="http://localhost:5000/auth/google">LOGIN</a></div>
+    }
 }
 
 export default Home;

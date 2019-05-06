@@ -11,7 +11,7 @@ function Place (props) {
             <div className="place-info">
                 <div className="title-container">
                     <h1>{props.place.place_name}</h1>
-                    <Visited visited={props.place.place_visited}/>
+                    <Visited visited={props.isVisited}/>
                 </div>
                 <div className="place-detail">
                         <p>Series: {props.place.series ? props.place.series :"California's Gold"}</p>

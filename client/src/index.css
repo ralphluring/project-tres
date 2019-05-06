@@ -103,6 +103,16 @@ body{
     border:1px solid red;
 }
 
+.info-window-title{
+    display: flex;
+    justify-content: center
+}
+
+.info-window-bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
 
 @media only screen and (max-width: 600px) {
 

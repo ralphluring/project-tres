@@ -12,7 +12,8 @@ class FullMap extends Component {
     places: [],
     showingInfoWindow: false,
     activeMarker: {},
-    selectedPlace: {}
+    selectedPlace: {},
+    placesVisited: []
   };
 
   onMarkerClick = (props, marker, e) => {
@@ -48,13 +49,24 @@ class FullMap extends Component {
       .catch(function(error) {
         console.log(error);
       });
+
+      axios
+      .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
+      .then(response => {
+          this.setState({placesVisited:response.data.placesvisited})
+          console.log(response.data.placesvisited);
+      })
+      .catch(function(error){
+        console.log(error);
+      })
   }
 
   markers = () => {
     console.log(this.state.places)
+    console.log(this.state.placesVisited)
     return this.state.places.map((currentPlace, i) => {
         let icon = '';
-        if(currentPlace.place_visited){
+        if(this.state.placesVisited.indexOf(currentPlace._id)!==-1){
              icon = visited;
         }else{
             icon = notVisited;
@@ -98,11 +110,21 @@ class FullMap extends Component {
               marker={this.state.activeMarker}
               visible={this.state.showingInfoWindow}
             >
-              <p>{this.state.windowData.place_name}</p>
+            <div className="info-window">
+              <div className="info-window-title">
+              <h1>{this.state.windowData.place_name}</h1>
+            {this.state.placesVisited ? <img src={visited} alt="visited" height="25px" width="25px"/>:<img src={notVisited} alt="not-visited" height="25px" width="25px"/>}
+              </div>
+
               <p>{this.state.windowData.summary}</p>
-              <p>{this.state.windowData.series}</p>
-              <p>{this.state.windowData.episode}</p>
-           {this.state.windowData.place_visited ? <img src={visited} alt="visited"/>:<img src={notVisited} alt="not-visited"/>}
+              <div className="info-window-bottom">
+              <p>Series: {this.state.windowData.series}</p>
+              <p>Episode # {this.state.windowData.episode}</p>
+              </div>
+             
+            </div>
+            
+          
             </InfoWindow>
         
 
