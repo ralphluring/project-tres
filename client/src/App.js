@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     // gets data from the route that has the data fo
     axios
-      .get("http://localhost:5000/whoami",
+      .get("/whoami",
         {withCredentials: true}
       )
       .then(response => {

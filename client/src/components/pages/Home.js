@@ -5,7 +5,7 @@ class Home extends Component {
     state = {user:{}}   
     componentDidMount() {
     
-        axios.get('http://localhost:5000/whoami')
+        axios.get('/whoami')
         .then(response => {
             console.log(response);
             this.setState({user:response.data})
@@ -17,7 +17,7 @@ class Home extends Component {
 
 
     render(){
-        return <div><a href="http://localhost:5000/auth/google">LOGIN</a></div>
+        return <div><a href="/auth/google">LOGIN</a></div>
     }
 }
 

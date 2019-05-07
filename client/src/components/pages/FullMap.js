@@ -41,7 +41,7 @@ class FullMap extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/data/")
+      .get("/data/")
       .then(response => {
         this.setState({ places: response.data });
         console.log(response);
@@ -61,7 +61,7 @@ class FullMap extends Component {
       // })
 
       axios
-      .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
+      .get(`/user/placesvisited/${this.props.googleId}`)
       .then(response => {
         this.setState({ placesVisited: response.data.placesvisited.map( place => place.place ) })
         console.log("AllPlaces - componentdidmount", response.data.placesvisited);
