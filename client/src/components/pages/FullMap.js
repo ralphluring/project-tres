@@ -51,7 +51,7 @@ class FullMap extends Component {
       });
 
       // axios
-      // .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
+      // .get(`/user/placesvisited/${this.props.googleId}`)
       // .then(response => {
       //     this.setState({placesVisited:response.data.placesvisited})
       //     console.log(response.data.placesvisited);

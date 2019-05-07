@@ -25,7 +25,7 @@ export default class PlaceList extends Component {
     //     };
     //   })
     // });
-    await axios.put(`http://localhost:5000/data/${id}`,
+    await axios.put(`/data/${id}`,
       { place_visited: id },
       { withCredentials: true }
     )
@@ -45,7 +45,7 @@ export default class PlaceList extends Component {
     // all the places from the database
     console.log("componentDidMount ", this.state )
     axios
-      .get("http://localhost:5000/data/")
+      .get("/data/")
       .then(response => {
         // sets the state to be all of the places
         this.setState({ places: response.data });
@@ -56,7 +56,7 @@ export default class PlaceList extends Component {
       });
 
     axios
-      .get(`http://localhost:5000/user/placesvisited/${this.props.googleId}`)
+      .get(`/user/placesvisited/${this.props.googleId}`)
       .then(response => {
         this.setState({ placesVisited: response.data.placesvisited.map( place => place.place ) })
         console.log("AllPlaces - componentdidmount", response.data.placesvisited);
