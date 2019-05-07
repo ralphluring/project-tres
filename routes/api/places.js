@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const path = requre("path");
 const passport = require("passport");
 const Places = require("../../models/Places");
 const User = require("../../models/User");
@@ -69,7 +69,7 @@ router.get(
   passport.authenticate("google"), //, {failureRedirect: "/", session: false }
   (req, res) => {
     console.log("Inside api/places /auth/google/callback", req.user);
-    res.redirect("http://localhost:3000/");
+    res.redirect("/");
   }
 );
 
@@ -79,5 +79,5 @@ router.get("/whoami", async function (req, res) {
   res.json({ googleId: req.user.googleId, displayName: req.user.displayName });
 });
 
-router.use("/",express.static("../../client/build"))
+router.use("/",express.static(path.join(__dirname,"../../client/build")))
 module.exports = router;
