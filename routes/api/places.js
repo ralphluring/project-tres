@@ -79,5 +79,5 @@ router.get("/whoami", async function (req, res) {
   res.json({ googleId: req.user.googleId, displayName: req.user.displayName });
 });
 
-router.use("/",express.static("../../../client/build"))
+router.use("/",express.static("../../client/build"))
 module.exports = router;
